@@ -1,0 +1,19 @@
+name: Sample App Tests
+
+on: push
+
+jobs:
+  sample_app_tests:
+    name: "Run Tests using Jest"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        working-directory: ./sample_app
+        run: npm install
+
+      - name: Run tests
+        working-directory: ./sample_app
+        run: npm test
